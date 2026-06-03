@@ -71,3 +71,11 @@ Este projeto foi desenvolvido como parte do BootCamp 2026 do Prof. Jamilton Dama
 - Navegação entre Activities com passagem de objetos via `Serializable`
 
 ---
+
+## 📱 Telas do App
+
+<img width="397" height="845" alt="image" src="https://github.com/user-attachments/assets/d613bae4-ad92-414f-b29d-8f664e3040de" />
+
+<img width="398" height="846" alt="image" src="https://github.com/user-attachments/assets/8347a644-5370-4d11-8886-0d7af927e3ac" />
+
+
