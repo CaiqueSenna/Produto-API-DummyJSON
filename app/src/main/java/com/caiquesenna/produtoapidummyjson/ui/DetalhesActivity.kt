@@ -14,6 +14,7 @@ class DetalhesActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
+        binding = ActivityDetalhesBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         val product = intent.getSerializableExtra("PRODUCT") as? Product
