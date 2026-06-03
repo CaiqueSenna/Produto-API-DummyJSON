@@ -18,9 +18,18 @@ class DetalhesActivity : AppCompatActivity() {
         setContentView(binding.root)
 
        //Configuração da Toolbar
-        setSupportActionBar(binding.toolbarDetalhes)
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        supportActionBar?.title = "Detalhes do Produto"
+        binding.toolbarDetalhes.setNavigationOnClickListener {
+            finish()
+        }
+        // CORREÇÃO DO EDGE-TO-EDGE: Empurra a Toolbar para baixo do relógio
+        androidx.core.view.ViewCompat.setOnApplyWindowInsetsListener(binding.toolbarDetalhes) { view, insets ->
+            val statusBars = insets.getInsets(androidx.core.view.WindowInsetsCompat.Type.statusBars())
+
+            // Aplica a altura da barra de status como preenchimento superior da Toolbar
+            view.setPadding(view.paddingLeft, statusBars.top, view.paddingRight, view.paddingBottom)
+
+            insets
+        }
 
         val product = intent.getSerializableExtra("PRODUCT") as? Product
         product?.let {
@@ -30,11 +39,6 @@ class DetalhesActivity : AppCompatActivity() {
             Glide.with(this).load(it.thumbnail).into(binding.imgDetailProduct)
         }
 
-    }
-    //Função de Voltar
-    override fun onSupportNavigateUp(): Boolean {
-        finish()
-        return true
     }
 
 }

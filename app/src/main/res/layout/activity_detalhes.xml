@@ -10,9 +10,9 @@
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbarDetalhes"
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="?attr/colorPrimary"
+        android:layout_height="wrap_content" android:background="?attr/colorPrimary"
         app:titleTextColor="@android:color/white"
+        app:navigationIcon="@drawable/setinha_voltar"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
