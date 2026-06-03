@@ -17,6 +17,11 @@ class DetalhesActivity : AppCompatActivity() {
         binding = ActivityDetalhesBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+       //Configuração da Toolbar
+        setSupportActionBar(binding.toolbarDetalhes)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.title = "Detalhes do Produto"
+
         val product = intent.getSerializableExtra("PRODUCT") as? Product
         product?.let {
             binding.txtDetailTitle.text = it.title
@@ -26,4 +31,10 @@ class DetalhesActivity : AppCompatActivity() {
         }
 
     }
+    //Função de Voltar
+    override fun onSupportNavigateUp(): Boolean {
+        finish()
+        return true
+    }
+
 }
