@@ -36,6 +36,10 @@ class DetalhesActivity : AppCompatActivity() {
             binding.txtDetailTitle.text = it.title
             binding.txtDetailPrice.text = "R$ ${it.price}"
             binding.txtDetailDescription.text = it.description
+            binding.txtDetailDimensions.text = it.dimensions.toString()
+            binding.txtDetailStock.text = "Estoque: ${it.stock.toString()}"
+            binding.txtDetailMinimumOrderQuant.text = "Minimo: ${it.minimumOrderQuantity.toString()}"
+            binding.txtDetailSku.text = "SKU: ${it.sku}"
             Glide.with(this).load(it.thumbnail).into(binding.imgDetailProduct)
         }
 
